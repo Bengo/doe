@@ -13,7 +13,7 @@ public class DoeMetaData {
 	private String moeAdresse;
 	private String moeVille;
 	private String lot;
-
+	private List<Materiau> materiaux;
 	/**
 	 * @return the date
 	 */
@@ -149,4 +149,19 @@ public class DoeMetaData {
 		this.lot = lot;
 	}
 
+	/**
+	 * @return the materiaux
+	 */
+	public List<Materiau> getMateriaux() {
+		return materiaux;
+	}
+
+	/**
+	 * @param materiaux the materiaux to set
+	 */
+	public void setMateriaux(List<Materiau> materiaux) {
+		this.materiaux = materiaux;
+	}
+
+	
 }
