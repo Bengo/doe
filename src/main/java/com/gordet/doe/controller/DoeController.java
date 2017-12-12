@@ -2,12 +2,12 @@ package com.gordet.doe.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,7 +32,7 @@ public class DoeController {
 
 	@RequestMapping(value = "/doe/{id}/pdf", method = RequestMethod.GET)
 	@ApiParam(name = "id", type="string", required=true)	
-	public void getDoeFile(@PathVariable("id") String id, HttpServletResponse response) {
+	public void getDoeFile(@PathVariable("id") String id, HttpServletResponse response) throws Exception {
 		 try {
 			 	File pdf = doeService.getDoePDF();
 
@@ -42,8 +42,8 @@ public class DoeController {
 		      org.apache.commons.io.IOUtils.copy(is, response.getOutputStream());
 		      response.setContentType("application/pdf");
 		      response.flushBuffer();
-		    } catch (IOException ex) {
-		      throw new RuntimeException("IOError writing file to output stream");
+		    } catch (Exception ex) {
+		      response.sendError(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getLocalizedMessage());
 		    }
 	}
 	

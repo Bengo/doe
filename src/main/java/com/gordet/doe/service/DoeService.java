@@ -9,5 +9,5 @@ public interface DoeService {
 	
 	void putDetaildDoe();
 	DoeMetaData getDetailsDoe();
-	File getDoePDF();	
+	File getDoePDF() throws Exception;	
 }
