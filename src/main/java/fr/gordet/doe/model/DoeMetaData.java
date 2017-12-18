@@ -1,4 +1,4 @@
-package com.gordet.doe.model;
+package fr.gordet.doe.model;
 
 import java.util.List;
 

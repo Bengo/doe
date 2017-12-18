@@ -1,4 +1,4 @@
-package com.gordet.doe;
+package fr.gordet.doe;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

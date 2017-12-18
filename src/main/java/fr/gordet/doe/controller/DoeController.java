@@ -1,4 +1,4 @@
-package com.gordet.doe.controller;
+package fr.gordet.doe.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gordet.doe.model.DoeMetaData;
-import com.gordet.doe.service.DoeService;
-
+import fr.gordet.doe.model.DoeMetaData;
+import fr.gordet.doe.service.DoeService;
 import io.swagger.annotations.ApiParam;
 
 @RestController
@@ -46,7 +45,7 @@ public class DoeController {
 		      response.sendError(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getLocalizedMessage());
 		    }
 	}
-	
+
 	@RequestMapping(value = "/doe/{id}/metadata", method = RequestMethod.POST)
 	@ApiParam(name = "id", type="string", required=true)
 	public void postDoeMetaData(@PathVariable("id") String id) {
