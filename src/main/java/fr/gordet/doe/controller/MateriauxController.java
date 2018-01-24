@@ -60,7 +60,7 @@ public class MateriauxController {
 		if (materiau != null) {
 			return materiau;
 		} else {
-			throw new ResourceNotFoundException("Aucun materiau n'existe avec cet id");
+			throw new ResourceNotFoundException("Aucun materiau n'existe avec cet identifiant");
 		}
 	}
 
