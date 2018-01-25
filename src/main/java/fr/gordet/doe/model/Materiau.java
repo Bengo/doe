@@ -10,7 +10,7 @@ public class Materiau {
 	private String categorie;
 	private String marque;
 	private String reference;
-	private String fichier;
+	private byte[] fichier;
 
 	/**
 	 * @return the id
@@ -75,7 +75,7 @@ public class Materiau {
 	/**
 	 * @return the fichier
 	 */
-	public String getFichier() {
+	public byte[] getFichier() {
 		return fichier;
 	}
 
@@ -83,7 +83,7 @@ public class Materiau {
 	 * @param fichier
 	 *            the fichier to set
 	 */
-	public void setFichier(String fichier) {
+	public void setFichier(byte[] fichier) {
 		this.fichier = fichier;
 	}
 
@@ -95,7 +95,7 @@ public class Materiau {
 	@Override
 	public String toString() {
 		return "Materiau [id=" + id + ", categorie=" + categorie + ", marque=" + marque + ", reference=" + reference
-				+ ", fichier=" + fichier + "]";
+				+"]";
 	}
 
 }

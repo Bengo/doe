@@ -42,15 +42,12 @@ public class DoeController {
 
 		      // get your file as InputStream
 		      InputStream is = new FileInputStream(pdf);
-//		      // copy it to response's OutputStream
-//		      org.apache.commons.io.IOUtils.copy(is, response.getOutputStream());
-//		      response.flushBuffer();
-//		      
+	      
 		      HttpHeaders headers = new HttpHeaders();
 		      headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
 		      headers.add("Pragma", "no-cache");
 		      headers.add("Expires", "0");
-		      headers.add("Content-Disposition", "attachment;filename=downloaded.pdf");
+		      headers.add("Content-Disposition", "attachment;filename=doe.pdf");
 		      return ResponseEntity
 		              .ok()
 		              .headers(headers)

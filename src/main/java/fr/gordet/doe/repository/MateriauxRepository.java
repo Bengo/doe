@@ -13,7 +13,7 @@ public interface MateriauxRepository extends MongoRepository<Materiau, String> {
 	Materiau findByCategorieAndMarqueAndReference(String categorie, String marque, String reference);
 	
 	Materiau findById(String id);
-
+	
 	List<Materiau> findAllByCategorieLike(String categorie);
 	
 	List<Materiau> findAllByMarqueLike(String marque);
